@@ -345,6 +345,9 @@
   <data name="ColumnName.MinimumWidth" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
+  <data name="ColumnName.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
   <metadata name="ColumnMessage.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -353,6 +356,15 @@
   </data>
   <data name="ColumnMessage.MinimumWidth" type="System.Int32, mscorlib">
     <value>30</value>
+  </data>
+  <metadata name="ColumnProgress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnProgress.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColumnProgress.Width" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
   <metadata name="Actions.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -473,6 +485,12 @@
   </data>
   <data name="&gt;&gt;ColumnMessage.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnProgress.Name" xml:space="preserve">
+    <value>ColumnProgress</value>
+  </data>
+  <data name="&gt;&gt;ColumnProgress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Actions.Name" xml:space="preserve">
     <value>Actions</value>

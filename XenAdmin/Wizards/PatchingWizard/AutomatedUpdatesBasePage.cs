@@ -42,6 +42,7 @@ using System.Linq;
 using XenAdmin.Core;
 using System.Text;
 using System.Windows.Forms;
+using XenAdmin.Actions;
 using XenAdmin.Controls.DataGridViewEx;
 using XenAdmin.Diagnostics.Problems;
 using XenAdmin.Wizards.RollingUpgradeWizard.PlanActions;
@@ -878,6 +879,7 @@ namespace XenAdmin.Wizards.PatchingWizard
     {
         private DataGridViewImageCell _poolIconCell;
         private DataGridViewTextBoxCell _messageCell;
+        private DataGridViewImageCell _progressCell;
         private DataGridViewDropDownSplitButtonCell _actionCell;
 
         private readonly ToolStripMenuItem _retryItem = new ToolStripMenuItem(Messages.RETRY);
@@ -904,9 +906,10 @@ namespace XenAdmin.Wizards.PatchingWizard
             _poolIconCell = new DataGridViewImageCell();
             _nameCell = new DataGridViewTextAndImageCell();
             _messageCell = new DataGridViewTextBoxCell();
+            _progressCell = new DataGridViewImageCell();
             _actionCell = new DataGridViewDropDownSplitButtonCell();
 
-            Cells.AddRange(_expansionCell, _poolIconCell, _nameCell, _messageCell, _actionCell);
+            Cells.AddRange(_expansionCell, _poolIconCell, _nameCell, _messageCell, _progressCell, _actionCell);
 
             _retryItem.Click += ToolStripMenuItemRetry_Click;
             _skipItem.Click += ToolStripMenuItemSkip_Click;
@@ -955,6 +958,18 @@ namespace XenAdmin.Wizards.PatchingWizard
         {
             var currentAction = BackgroundWorker.InProgressActions.FirstOrDefault();
             CurrentlyShownMessage = currentAction != null ? currentAction.CurrentProgressStep : string.Empty;
+
+            //TODO: Consider factoring out ActionBase.GetImage into a common function available to both classes.
+            if (currentAction == null || currentAction.IsComplete)
+                _progressCell.Value = null;
+            else
+            {
+                var ab = new ActionBase(null, null, false)
+                {
+                    PercentComplete = Convert.ToInt32(Math.Floor(BackgroundWorker.ProgressIncrement * 100))
+                };
+                _progressCell.Value = ab.GetImage();
+            }
 
             var actions = new List<ToolStripItem>();
             if (IsPoolOrStandaloneHost)

@@ -35,6 +35,7 @@ namespace XenAdmin.Wizards.PatchingWizard
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
             this.textBoxLog = new System.Windows.Forms.TextBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -48,6 +49,7 @@ namespace XenAdmin.Wizards.PatchingWizard
             this.ColumnPoolIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnMessage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProgress = new System.Windows.Forms.DataGridViewImageColumn();
             this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -128,6 +130,7 @@ namespace XenAdmin.Wizards.PatchingWizard
             this.ColumnPoolIcon,
             this.ColumnName,
             this.ColumnMessage,
+            this.ColumnProgress,
             this.Actions});
             resources.ApplyResources(this.dataGridLog, "dataGridLog");
             this.dataGridLog.MultiSelect = true;
@@ -181,6 +184,19 @@ namespace XenAdmin.Wizards.PatchingWizard
             this.ColumnMessage.ReadOnly = true;
             this.ColumnMessage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // ColumnProgress
+            // 
+            this.ColumnProgress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.ColumnProgress.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.ColumnProgress, "ColumnProgress");
+            this.ColumnProgress.Name = "ColumnProgress";
+            this.ColumnProgress.ReadOnly = true;
+            this.ColumnProgress.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnProgress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Actions
             // 
             this.Actions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -222,6 +238,7 @@ namespace XenAdmin.Wizards.PatchingWizard
         private System.Windows.Forms.DataGridViewImageColumn ColumnPoolIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMessage;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnProgress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actions;
     }
 }
