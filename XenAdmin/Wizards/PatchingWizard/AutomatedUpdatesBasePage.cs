@@ -959,17 +959,9 @@ namespace XenAdmin.Wizards.PatchingWizard
             var currentAction = BackgroundWorker.InProgressActions.FirstOrDefault();
             CurrentlyShownMessage = currentAction != null ? currentAction.CurrentProgressStep : string.Empty;
 
-            //TODO: Consider factoring out ActionBase.GetImage into a common function available to both classes.
-            if (currentAction == null || currentAction.IsComplete)
-                _progressCell.Value = null;
-            else
-            {
-                var ab = new ActionBase(null, null, false)
-                {
-                    PercentComplete = Convert.ToInt32(Math.Floor(BackgroundWorker.ProgressIncrement * 100))
-                };
-                _progressCell.Value = ab.GetImage();
-            }
+            _progressCell.Value = currentAction != null
+                ? ProgressBarHelper.GetImage(currentAction.IsComplete, currentAction.Error, Convert.ToInt32(Math.Floor(BackgroundWorker.ProgressIncrement * 100)))
+                : null;
 
             var actions = new List<ToolStripItem>();
             if (IsPoolOrStandaloneHost)
