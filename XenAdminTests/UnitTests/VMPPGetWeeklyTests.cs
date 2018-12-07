@@ -37,8 +37,22 @@ using NUnit.Framework;
 namespace XenAdminTests.UnitTests
 {
 
+    [TestFixture, Category(TestCategories.Unit)]
     class VMPPGetWeeklyTests
     {
+        [Test]
+        public void TestNullGivenDays()
+        {
+            var time = VMSS.GetWeeklyDate(new DateTime(2010, 10, 18, 10, 00, 0), 10, 15, null);
+            Assert.AreEqual(new DateTime(2010, 10, 18, 10, 15, 0), time);
+        }
+
+        [Test]
+        public void TestNoGivenDays()
+        {
+            var time = VMSS.GetWeeklyDate(new DateTime(2010, 10, 18, 10, 00, 0), 10, 15, new List<DayOfWeek>());
+            Assert.AreEqual(new DateTime(2010, 10, 18, 10, 15, 0), time);
+        }
 
         [Test]
         public void Test1()

@@ -76,6 +76,9 @@ namespace XenAPI
 
         public static DateTime GetWeeklyDate(DateTime time, int hour, int min, List<DayOfWeek> listDaysOfWeek)
         {
+            if (listDaysOfWeek == null || !listDaysOfWeek.Any())
+                listDaysOfWeek = new List<DayOfWeek> { DayOfWeek.Monday };
+
             listDaysOfWeek.Sort();
 
             int daysOfDifference;
