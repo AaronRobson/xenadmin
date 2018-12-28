@@ -43,9 +43,9 @@ namespace CFUValidator.OutputDecorators
         private const string header = "XenServer updates required:";
         private const string updateNotFound = "XenServer update could not be found";
 
-        public XenServerUpdateDecorator(OuputComponent ouputComponent, List<XenServerVersionAlert> alerts)
+        public XenServerUpdateDecorator(OutputComponent outputComponent, List<XenServerVersionAlert> alerts)
         {
-            SetComponent(ouputComponent);
+            SetComponent(outputComponent);
             this.alerts = alerts;
         }
 

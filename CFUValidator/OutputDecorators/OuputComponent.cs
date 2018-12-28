@@ -36,16 +36,16 @@ using System.Text;
 
 namespace CFUValidator.OutputDecorators
 {
-    public abstract class OuputComponent
+    public abstract class OutputComponent
     {
         public abstract StringBuilder Generate();
     }
 
-    public class OutputTextOuputComponent : OuputComponent
+    public class OutputTextOutputComponent : OutputComponent
     {
         private readonly string location;
         private readonly string serverVersion;
-        public OutputTextOuputComponent(string location, string serverVersion)
+        public OutputTextOutputComponent(string location, string serverVersion)
         {
             this.location = location;
             this.serverVersion = serverVersion;

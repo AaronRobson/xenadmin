@@ -39,9 +39,9 @@ namespace CFUValidator.OutputDecorators
     {
         private readonly string header;
         private readonly AlertFeatureValidator validator;
-        public AlertFeatureValidatorDecorator(OuputComponent ouputComponent, AlertFeatureValidator validator, string header)
+        public AlertFeatureValidatorDecorator(OutputComponent outputComponent, AlertFeatureValidator validator, string header)
         {
-            SetComponent(ouputComponent);
+            SetComponent(outputComponent);
             this.validator = validator;
             this.header = header;
         }

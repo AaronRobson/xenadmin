@@ -198,7 +198,7 @@ namespace CFUValidator
         private void GeneratePatchSummary(List<XenServerPatchAlert> alerts, List<AlertFeatureValidator> validators,
                                           List<XenServerVersionAlert> updateAlerts, List<XenCenterUpdateAlert> xcupdateAlerts)
         {
-            OuputComponent oc = new OutputTextOuputComponent(XmlLocation, ServerVersion);
+            OutputComponent oc = new OutputTextOutputComponent(XmlLocation, ServerVersion);
             XenCenterUpdateDecorator xcud = new XenCenterUpdateDecorator(oc, xcupdateAlerts);
             XenServerUpdateDecorator xsud = new XenServerUpdateDecorator(xcud, updateAlerts);
             PatchAlertDecorator pad = new PatchAlertDecorator(xsud, alerts);

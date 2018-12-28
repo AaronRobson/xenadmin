@@ -34,18 +34,18 @@ using System.Text;
 
 namespace CFUValidator.OutputDecorators
 {
-    abstract class Decorator : OuputComponent
+    abstract class Decorator : OutputComponent
     {
-        private OuputComponent ouputComponent;
-        public void SetComponent(OuputComponent ouputComponentToSet)
+        private OutputComponent outputComponent;
+        public void SetComponent(OutputComponent outputComponentToSet)
         {
-            ouputComponent = ouputComponentToSet;
+            outputComponent = outputComponentToSet;
         }
 
         public override StringBuilder Generate()
         {
-            if(ouputComponent != null)
-                return ouputComponent.Generate();
+            if(outputComponent != null)
+                return outputComponent.Generate();
 
             throw new NullReferenceException();
         }

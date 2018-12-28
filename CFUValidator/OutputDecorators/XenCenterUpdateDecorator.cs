@@ -42,9 +42,9 @@ namespace CFUValidator.OutputDecorators
         private const string header = "XenCenter updates required:";
         private const string updateNotFound = "XenCenter update could not be found";
 
-        public XenCenterUpdateDecorator(OuputComponent ouputComponent, List<XenCenterUpdateAlert> alerts)
+        public XenCenterUpdateDecorator(OutputComponent outputComponent, List<XenCenterUpdateAlert> alerts)
         {
-            SetComponent(ouputComponent);
+            SetComponent(outputComponent);
             this.alerts = alerts;
         }
 

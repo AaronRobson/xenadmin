@@ -160,7 +160,7 @@ namespace XenAdminTests
             string fileName = TestResource(dbFileName);
             Assert.True(File.Exists(fileName),
                 String.Format("Provided filename does not exist: '{0}'. " +
-                "If this is a new file, maybe the 'Copy To Ouput Directory' property has not been set",
+                "If this is a new file, maybe the 'Copy To Output Directory' property has not been set",
                 fileName));
 
             XenAdminConfigManager.Provider = new TestXenAdminConfigProvider();

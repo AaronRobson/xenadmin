@@ -47,9 +47,9 @@ namespace CFUValidator.OutputDecorators
         private const string hotfixRegex = "XS[0-9]+E[A-Z]*[0-9]+";
         private const string unknown = "Name unknown (uuid={0})";
 
-        public PatchAlertDecorator(OuputComponent ouputComponent, List<XenServerPatchAlert> alerts)
+        public PatchAlertDecorator(OutputComponent outputComponent, List<XenServerPatchAlert> alerts)
         {
-            SetComponent(ouputComponent);
+            SetComponent(outputComponent);
             this.alerts = alerts;
         }
 
