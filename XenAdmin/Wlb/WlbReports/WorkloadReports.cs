@@ -676,7 +676,7 @@ namespace XenAdmin
             }
 
 
-            // Boolean variuable to determine the display the Filter drop down menu?
+            // Boolean variable to determine the display the Filter drop down menu?
             if (currentNode.SelectSingleNode(@"QueryParameters/QueryParameter[@Name='Filter']") == null)
             {
                 nodeDisplayFilter = false;
@@ -687,7 +687,7 @@ namespace XenAdmin
             }
 
 
-            // Boolean variuable to determine the display the Host drop down menu?
+            // Boolean variable to determine the display the Host drop down menu?
             if (currentNode.SelectSingleNode(@"QueryParameters/QueryParameter[@Name='HostID']") == null)
             {
                 nodeDisplayHosts = false;
