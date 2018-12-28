@@ -99,7 +99,7 @@ namespace XenAdmin.Commands
         /// <summary>
         /// Gets the tool tip text when the command is not able to run. 
         /// If multiple items and Trim is not supported on all, then return this reason.
-        /// Otherwise, the default behaviour: CantExectuteReason for single items, null for multiple.
+        /// Otherwise, the default behaviour: CantExecuteReason for single items, null for multiple.
         /// </summary>
         protected override string DisabledToolTipText
         {

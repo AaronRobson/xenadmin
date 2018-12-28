@@ -117,7 +117,7 @@ namespace XenAdmin.Plugins
             // execute the initialize script
             // get ourselves in the correct directory
             // put the parameters in the objInfoArray variable
-            // exectute the plugin, with debugging if required
+            // execute the plugin, with debugging if required
             string command = string.Format(
                               "& {{" +
                               "  . \"{0}\";" + 

@@ -255,7 +255,7 @@ namespace XenAdmin.Commands
         }
 
         /// <summary>
-        /// Gets the tool tip text when the command is not able to run. CantExectuteReason for single items,
+        /// Gets the tool tip text when the command is not able to run. CantExecuteReason for single items,
         /// null for multiple.
         /// </summary>
         protected virtual string DisabledToolTipText
