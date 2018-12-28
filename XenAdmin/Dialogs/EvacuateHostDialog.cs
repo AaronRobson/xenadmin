@@ -941,7 +941,7 @@ namespace XenAdmin.Dialogs
 
             if (elevatedSession != null && elevatedSession.opaque_ref != null)
             {
-                // NOTE: This doesnt happen currently, as we always scan once. Here as cheap insurance.
+                // NOTE: This doesn't happen currently, as we always scan once. Here as cheap insurance.
                 // we still have the session from the role elevation dialog
                 // it hasn't been used by an action so needs to be logged out
                 elevatedSession.logout();

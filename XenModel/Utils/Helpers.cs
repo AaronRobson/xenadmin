@@ -1565,7 +1565,7 @@ namespace XenAdmin.Core
         }
 
         /// <summary>
-        /// Retrieves a true of false value from an XML attribute. Returns null-bool if the attribute doesnt exist or the
+        /// Retrieves a true of false value from an XML attribute. Returns null-bool if the attribute doesn&quot;t exist or the
         /// value is malformed.
         /// </summary>
         /// <param name="Node"></param>
@@ -1584,7 +1584,7 @@ namespace XenAdmin.Core
         }
 
         /// <summary>
-        /// Retrieves a true of false value from an XML attribute. Returns Default if the attribute doesnt exist or the
+        /// Retrieves a true of false value from an XML attribute. Returns Default if the attribute doesn&quot;t exist or the
         /// value is malformed.
         /// </summary>
         /// <param name="Node"></param>
@@ -1600,7 +1600,7 @@ namespace XenAdmin.Core
         }
 
         /// <summary>
-        /// Retrieves a float value from an XML attribute. Defaults to null-float if the attribute doesnt exist or the
+        /// Retrieves a float value from an XML attribute. Defaults to null-float if the attribute doesn&quot;t exist or the
         /// value is malformed.
         /// </summary>
         /// <param name="Node"></param>
@@ -1619,7 +1619,7 @@ namespace XenAdmin.Core
         }
 
         /// <summary>
-        /// Retrieves a float value from an XML attribute. Returns Default if the attribute doesnt exist or the
+        /// Retrieves a float value from an XML attribute. Returns Default if the attribute doesn&quot;t exist or the
         /// value is malformed.
         /// </summary>
         /// <param name="Node"></param>
@@ -1635,7 +1635,7 @@ namespace XenAdmin.Core
         }
 
         /// <summary>
-        /// Retrieves an int value from an XML attribute. Defaults to null-int if the attribute doesnt exist or the
+        /// Retrieves an int value from an XML attribute. Defaults to null-int if the attribute doesn&quot;t exist or the
         /// value is malformed.
         /// </summary>
         /// <param name="Node"></param>
@@ -1654,7 +1654,7 @@ namespace XenAdmin.Core
         }
 
         /// <summary>
-        /// Retrieves an int value from an XML attribute. Returns Default if the attribute doesnt exist or the
+        /// Retrieves an int value from an XML attribute. Returns Default if the attribute doesn&quot;t exist or the
         /// value is malformed.
         /// </summary>
         /// <param name="Node"></param>
@@ -1685,7 +1685,7 @@ namespace XenAdmin.Core
         /// <summary>
         /// Retrieves the enum content of an XmlNode attribute or Default if it is missing. 
         /// 
-        /// WARNING: Runtime check that typeof(T).IsEnum (Sorry! C# doesnt support Enum generics very well).
+        /// WARNING: Runtime check that typeof(T).IsEnum (Sorry! C# doesn&quot;t support Enum generics very well).
         /// </summary>
         /// <param name="Node"></param>
         /// <param name="Attribute"></param>

@@ -402,7 +402,7 @@ namespace XenAdmin.Actions.VMActions
         private void AddCdDrive()
         {
             if (Helpers.CustomWithNoDVD(Template))
-                return; // we have skipped the install media page because we are a cutom template with no cd drive - the user doesnt want a cd drive
+                return; // we have skipped the install media page because we are a cutom template with no cd drive - the user doesn't want a cd drive
 
             Description = Messages.CREATE_CD_DRIVE;
             VBD cd_drive = null;
