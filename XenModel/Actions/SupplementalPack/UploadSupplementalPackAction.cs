@@ -201,7 +201,7 @@ namespace XenAdmin.Actions
                     //clean-up the VDI we've just created
                     try
                     {
-                        log.ErrorFormat("Deleting VDI '{0}' on a best effor basis.", vdiRef);
+                        log.ErrorFormat("Deleting VDI '{0}' on a best effort basis.", vdiRef);
                         VDI.destroy(Session, vdiRef);
                     }
                     catch (Exception removeEx)
