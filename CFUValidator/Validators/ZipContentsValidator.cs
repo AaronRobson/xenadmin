@@ -67,7 +67,7 @@ namespace CFUValidator.Validators
         {
             if(string.IsNullOrEmpty(patch.Patch.PatchUrl))
             {
-                Results.Add("Patch conatined no URL: " + patch.Patch.Name);
+                Results.Add("Patch contained no URL: " + patch.Patch.Name);
                 return;
             }
 
