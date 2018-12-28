@@ -1867,7 +1867,7 @@ namespace XenAdmin.Core
        }
 
        /// <summary>
-       /// Number of alloowed NICs per bond
+       /// Number of allowed NICs per bond
        /// </summary>
        public static int BondSizeLimit(IXenConnection connection)
        {
