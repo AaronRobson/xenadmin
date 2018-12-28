@@ -214,7 +214,7 @@ namespace XenAdmin.Dialogs
 
             ApplyLicenseEditionCommand command = new ApplyLicenseEditionCommand(Program.MainWindow, xos, GetCheckedEdition(), licenseServerNameTextBox.Text, licenseServerPortTextBox.Text, this);
 
-            command.Succedded += delegate
+            command.Succeeded += delegate
                                      {
                                          Program.Invoke(this, () =>
                                             {

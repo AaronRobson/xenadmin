@@ -48,11 +48,11 @@ namespace XenAdmin.Commands
         private readonly string _licenseServerAddress;
         private readonly string _licenseServerPort;
 
-        public event EventHandler<EventArgs> Succedded;
+        public event EventHandler<EventArgs> Succeeded;
 
-        public void InvokeSuccedded(EventArgs e)
+        public void InvokeSucceeded(EventArgs e)
         {
-            EventHandler<EventArgs> handler = Succedded;
+            EventHandler<EventArgs> handler = Succeeded;
             if (handler != null) handler(this, e);
         }
 
@@ -97,7 +97,7 @@ namespace XenAdmin.Commands
 
                 if (actionProgress.action.Succeeded)
                 {
-                    InvokeSuccedded(null);
+                    InvokeSucceeded(null);
                 }
             }
         }
