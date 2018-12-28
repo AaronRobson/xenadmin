@@ -382,7 +382,7 @@ namespace XenAdmin.ConsoleView
                 }
                 catch (Exception e)
                 {
-                    // We seem to be very occasionally getting wierd exception from this.  These are probably due to
+                    // We seem to be very occasionally getting weird exception from this.  These are probably due to
                     // bad server messages, so we can just log and ignore them
 
                     Log.Error("Error drawing image from server", e);
