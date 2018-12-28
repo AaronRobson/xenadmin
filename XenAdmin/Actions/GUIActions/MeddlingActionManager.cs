@@ -57,7 +57,7 @@ namespace XenAdmin.Actions.GUIActions
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
-        /// Tasks that we've seen, but haven't categorised yet.  May only be acccesed under the DictionaryLock.
+        /// Tasks that we've seen, but haven't categorised yet.  May only be accessed under the DictionaryLock.
         /// </summary>
         private static readonly List<string> UnmatchedTasks = new List<string>();
 
