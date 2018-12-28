@@ -741,7 +741,7 @@ namespace XenAdmin.Wlb
                 }
             }
             //we are still here, so we have not found the next task.  this means that we 
-            // need to account for week wrapping.  This shoudl be the first task of the Virtual
+            // need to account for week wrapping.  This should be the first task of the Virtual
             // Task List
             return firstTask;
         }
