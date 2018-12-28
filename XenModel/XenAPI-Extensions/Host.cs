@@ -1118,7 +1118,7 @@ namespace XenAPI
 
         /// <summary>
         /// The total of all the dynamic_minimum memories of all resident VMs other than the control domain.
-        /// For non-ballonable VMs, we use the static_maximum instead, because the dynamic_minimum has no effect.
+        /// For non-balloonable VMs, we use the static_maximum instead, because the dynamic_minimum has no effect.
         /// </summary>
         public long tot_dyn_min()
         {
@@ -1133,7 +1133,7 @@ namespace XenAPI
 
         /// <summary>
         /// The total of all the dynamic_maximum memories of all resident VMs other than the control domain.
-        /// For non-ballonable VMs, we use the static_maximum instead, because the dynamic_maximum has no effect.
+        /// For non-balloonable VMs, we use the static_maximum instead, because the dynamic_maximum has no effect.
         /// </summary>
         public long tot_dyn_max()
         {

@@ -134,7 +134,7 @@ namespace XenAdmin.Core
             toolTip.RemoveAll();
             toolTip.IsBalloon = true;
             toolTip.Active = true;
-            toolTip.SetToolTip(control, caption); // required to improve the ballon position.
+            toolTip.SetToolTip(control, caption); // required to improve the balloon position.
             toolTip.Show(caption, control, BALLOON_DURATION);
         }
 

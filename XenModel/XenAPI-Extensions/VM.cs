@@ -793,7 +793,7 @@ namespace XenAPI
         }
 
         /// <summary>
-        /// Does this VM support ballooning? I.e., are tools installed, on a ballonable OS?
+        /// Does this VM support ballooning? I.e., are tools installed, on a balloonable OS?
         /// Doesn't check for Midnight Ride or licensing constraints.
         /// </summary>
         public bool has_ballooning()
