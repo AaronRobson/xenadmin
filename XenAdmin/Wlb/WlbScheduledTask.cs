@@ -544,7 +544,7 @@ namespace XenAdmin.Wlb
 
                         int sortKey = GetSortKey(localDaysOfWeek, localExecuteTime);
 
-                        //if the task is disabled, bump the sort key to prevent conficts
+                        //if the task is disabled, bump the sort key to prevent conflicts
                         // with any new tasks.  This could start to get weird after 100 duplicate
                         // disabled tasks, but then it will be the user's problem.
                         if (!task.Enabled)
@@ -594,7 +594,7 @@ namespace XenAdmin.Wlb
                                 WlbScheduledTask.GetLocalTaskTimes((task.DaysOfWeek & dayValue), task.ExecuteTime, out localDaysOfWeek, out localExecuteTime);
 
                                 int sortKey = GetSortKey(localDaysOfWeek, localExecuteTime);
-                                //if the task is disabled, bump the sort key to prevent conficts
+                                //if the task is disabled, bump the sort key to prevent conflicts
                                 // with any new tasks.  This could start to get weird after 100 duplicate
                                 // disabled tasks, but then it will be the user's problem.
                                 if (!task.Enabled)
