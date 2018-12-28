@@ -145,7 +145,7 @@ namespace XenAdmin.Actions
         /// </summary>
         /// <param name="diagnosticToken"></param>
         /// <param name="uploadUuid"></param>
-        /// <returns>the analysis progress as pecentage, or -1 if the progress cannot be retrieved</returns>
+        /// <returns>the analysis progress as percentage, or -1 if the progress cannot be retrieved</returns>
         private double GetAnalysisProgress(string diagnosticToken, string uploadUuid)
         {
             try
@@ -178,7 +178,7 @@ namespace XenAdmin.Actions
         /// </summary>
         /// <param name="jsonString"></param>
         /// <param name="uploadUuid"></param>
-        /// <returns>the analysis progress as pecentage, or -1 if the JSON object is invalid</returns>
+        /// <returns>the analysis progress as percentage, or -1 if the JSON object is invalid</returns>
         public static double ParseAnalysisProgress(string jsonString, string uploadUuid)
         {
             if (string.IsNullOrEmpty(jsonString))
