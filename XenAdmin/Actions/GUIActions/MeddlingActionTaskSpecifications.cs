@@ -35,7 +35,7 @@ using XenAPI;
 namespace XenAdmin.Actions.GUIActions
 {
     /// <summary>
-    /// Specifcation for a task
+    /// Specification for a task
     /// </summary>
     public interface ITaskSpecification
     {
