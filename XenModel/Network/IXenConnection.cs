@@ -65,7 +65,7 @@ namespace XenAdmin.Network
         Session Connect(string user, string password);
         List<string> PoolMembers { get; set; }
         void LoadCache(Session session);
-        bool SupressErrors { get; set; }
+        bool SuppressErrors { get; set; }
         bool MasterMayChange { get; set; }
         bool SaveDisconnected { get; set; }
         string HostnameWithPort { get; }

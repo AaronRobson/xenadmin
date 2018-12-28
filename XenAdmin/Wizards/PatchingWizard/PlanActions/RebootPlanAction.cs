@@ -129,7 +129,7 @@ namespace XenAdmin.Wizards.PatchingWizard.PlanActions
             {
                 if (master)
                 {
-                    Connection.SupressErrors = true;
+                    Connection.SuppressErrors = true;
 
                     //
                     // Wait for a dissconnection
@@ -154,7 +154,7 @@ namespace XenAdmin.Wizards.PatchingWizard.PlanActions
             }
             finally
             {
-                Connection.SupressErrors = false;
+                Connection.SuppressErrors = false;
             }
             return session;
         }

@@ -47,14 +47,14 @@ namespace XenAdmin.Actions
 
         private bool InstallingTools = false;
 
-        public VbdSaveAndPlugAction(VM vm, XenAPI.VBD vbd, string vdiName, XenAPI.Session session, bool installingTools, bool supress, Action showMustRebootBoxCD, Action showVBDWarningBox)
-            : this(vm, vbd, vdiName, session, supress,showMustRebootBoxCD,showVBDWarningBox)
+        public VbdSaveAndPlugAction(VM vm, XenAPI.VBD vbd, string vdiName, XenAPI.Session session, bool installingTools, bool suppress, Action showMustRebootBoxCD, Action showVBDWarningBox)
+            : this(vm, vbd, vdiName, session, suppress,showMustRebootBoxCD,showVBDWarningBox)
         {
             InstallingTools = installingTools;
         }
 
-        public VbdSaveAndPlugAction(VM vm, XenAPI.VBD vbd, string vdiName, XenAPI.Session session, bool supress, Action showMustRebootBoxCD, Action showVBDWarningBox)
-            : base(vm.Connection, string.Format(Messages.ATTACHING_VIRTUAL_DISK, vdiName, vm.Name()), "", supress)
+        public VbdSaveAndPlugAction(VM vm, XenAPI.VBD vbd, string vdiName, XenAPI.Session session, bool suppress, Action showMustRebootBoxCD, Action showVBDWarningBox)
+            : base(vm.Connection, string.Format(Messages.ATTACHING_VIRTUAL_DISK, vdiName, vm.Name()), "", suppress)
         {
             _ShowVBDWarningBox = showVBDWarningBox;
             _ShowMustRebootBoxCD = showMustRebootBoxCD;

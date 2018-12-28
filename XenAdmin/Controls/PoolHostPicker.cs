@@ -42,7 +42,7 @@ namespace XenAdmin.Controls
     public partial class PoolHostPicker : CustomTreeView
     {
         public EventHandler<SelectedItemEventArgs> SelectedItemChanged;
-        public bool SupressErrors = false;
+        public bool SuppressErrors = false;
 
         public PoolHostPicker()
         {
@@ -97,7 +97,7 @@ namespace XenAdmin.Controls
                     if (Helpers.GetPool(xc) != null)
                     {
                         PoolItem item = new PoolItem(xc);
-                        if (SupressErrors)
+                        if (SuppressErrors)
                         {
                             item.Enabled = false;
                             item.Description = "";
@@ -106,7 +106,7 @@ namespace XenAdmin.Controls
                         foreach (Host host in xc.Cache.Hosts)
                         {
                             HostItem item2 = new HostItem(host);
-                            if (SupressErrors)
+                            if (SuppressErrors)
                             {
                                 item2.Enabled = host.IsLive();
                                 item2.Description = "";
@@ -123,7 +123,7 @@ namespace XenAdmin.Controls
                         if (host != null)
                         {
                             HostItem item = new HostItem(host);
-                            if (SupressErrors)
+                            if (SuppressErrors)
                             {
                                 item.Enabled = host.IsLive();
                                 item.Description = "";
@@ -135,7 +135,7 @@ namespace XenAdmin.Controls
                         else
                         {
                             PoolItem item = new PoolItem(xc);
-                            if (SupressErrors)
+                            if (SuppressErrors)
                             {
                                 item.Enabled = false;
                                 item.Description = "";
@@ -146,7 +146,7 @@ namespace XenAdmin.Controls
                     else
                     {
                         PoolItem item = new PoolItem(xc);
-                        if (SupressErrors)
+                        if (SuppressErrors)
                         {
                             item.Enabled = false;
                             item.Description = "";

@@ -49,7 +49,7 @@ namespace XenAdmin.Dialogs
         {
             InitializeComponent();
             poolHostPicker1.AllowPoolSelect = false;
-            poolHostPicker1.SupressErrors = true;
+            poolHostPicker1.SuppressErrors = true;
             poolHostPicker1.SelectedItemChanged += new EventHandler<XenAdmin.Controls.SelectedItemEventArgs>(selectionChanged);
             poolHostPicker1.buildList();
         }

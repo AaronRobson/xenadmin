@@ -119,7 +119,7 @@ namespace XenAdmin.SettingsPanels
 			                                			}
 			                                		}
 			                                	},
-                                            true, // supress history
+                                            true, // suppress history
 			                                "VBD.set_bootable"
 				);
 		}
