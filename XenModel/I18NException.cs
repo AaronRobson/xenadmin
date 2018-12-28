@@ -47,7 +47,7 @@ namespace XenAdmin.Core
             this.Parameters = parameters;
         }
 
-        // ensure that we log paramters and our type
+        // ensure that we log parameters and our type
         public override string ToString()
         {
             return string.Format("I18NException of type '{0}' occurred\nException parameters: '{1}'\n{2}", Type, string.Join(", ", Parameters), base.ToString());

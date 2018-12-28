@@ -52,7 +52,7 @@ namespace XenAdmin.Actions
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private const string EmptyParameter = "null";
-        private const string BlankParamter = "blank";
+        private const string BlankParameter = "blank";
 
         private static readonly string SnapInTrustedCertXml = 
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
@@ -279,8 +279,8 @@ namespace XenAdmin.Actions
             }
 
             string sessionRef = connection.Session != null ? connection.Session.opaque_ref : EmptyParameter;
-            string objCls = BlankParamter;
-            string objUuid = BlankParamter;
+            string objCls = BlankParameter;
+            string objUuid = BlankParameter;
             return new List<string>(new string[] { masterAddress, sessionRef, objCls, objUuid });
         }
 
