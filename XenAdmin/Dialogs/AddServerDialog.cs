@@ -155,7 +155,7 @@ namespace XenAdmin.Dialogs
                 ServerNameComboBox.Enabled = false;
                 AddButton.Text = Messages.OK;
             }
-            else if (_changedPass) // the password probably hasnt actually changed but we do know the user has typed it in wrong
+            else if (_changedPass) // the password probably hasn't actually changed but we do know the user has typed it in wrong
             {
                 Text = Messages.CONNECT_TO_SERVER;
                 labelInstructions.Text = Messages.ERROR_CONNECTING_BLURB;
