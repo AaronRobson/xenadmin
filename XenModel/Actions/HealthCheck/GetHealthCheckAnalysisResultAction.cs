@@ -141,7 +141,7 @@ namespace XenAdmin.Actions
         }
 
         /// <summary>
-        /// Tries to retrieve the analysis progress for a particulat upload
+        /// Tries to retrieve the analysis progress for a particular upload
         /// </summary>
         /// <param name="diagnosticToken"></param>
         /// <param name="uploadUuid"></param>

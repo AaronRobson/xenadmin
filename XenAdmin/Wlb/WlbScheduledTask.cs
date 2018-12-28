@@ -72,7 +72,7 @@ namespace XenAdmin.Wlb
             /// </summary>
             Daily = 1,
             /// <summary>
-            /// A trigger that occurs every week on a set of days at a particulat time
+            /// A trigger that occurs every week on a set of days at a particular time
             /// </summary>
             Weekly = 2,
             /// <summary>
