@@ -226,7 +226,7 @@ namespace XenAdmin.Wlb
         }
 
         /// <summary>
-        /// How often sends subscription, equivlent to WlbScheduledTask.WlbTaskTriggerType
+        /// How often sends subscription, equivalent to WlbScheduledTask.WlbTaskTriggerType
         /// </summary>
         public int TriggerType
         {
