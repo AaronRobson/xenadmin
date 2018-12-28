@@ -88,7 +88,7 @@ namespace XenAdmin.XenSearch
         ///  
         /// For Windows VMs on Dundee or higher:
         ///  - Memory value is not available if the Management agent is not installed;
-        ///  - Disk and Network vlaues are not available if I/O drivers are not installed
+        ///  - Disk and Network values are not available if I/O drivers are not installed
         /// </remarks>
         protected bool CheckVMTools(IXenObject o, out GridItemBase item)
         {
