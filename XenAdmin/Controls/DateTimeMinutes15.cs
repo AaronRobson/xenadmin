@@ -30,96 +30,69 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Text;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using XenCenterLib;
 
 namespace XenAdmin.Controls
 {
-    public partial class DateTimeMinutes15 : DateTimePicker
+    public class DateTimeMinutes15 : DateTimePicker
     {
+        public bool AutoCorrecting;
+
+
         public DateTimeMinutes15()
         {
-            base.ValueChanged += new EventHandler(DateTimeMinutes15_ValueChanged);
-            Value = new DateTime(1970, 1, 1, 0, 0, 0);
+            Format = DateTimePickerFormat.Custom;
+            ShowUpDown = true;
         }
 
-        void DateTimeMinutes15_ValueChanged(object sender, EventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-
-            if (Value.Minute == 1)
+            if (keyData == Keys.Up)
             {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 15, 0);
-                return;
+                Value = Value.AddMinutes(15);
+                return true;
             }
 
-            if (Value.Minute == 14)
+            if (keyData == Keys.Down)
             {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 0, 0);
-                return;
+                Value = Value.AddMinutes(-15);
+                return true;
             }
 
-            if (Value.Minute == 16)
-            {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 30, 0);
-                return;
-            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
-            if (Value.Minute == 29)
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == Win32.OCM_NOTIFY || m.Msg == Win32.WM_NOTIFY)
             {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 15, 0);
-                return;
-            }
+                Win32.NMHDR notify = (Win32.NMHDR)Marshal.PtrToStructure(m.LParam, typeof(Win32.NMHDR));
 
-            if (Value.Minute == 31)
-            {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 45, 0);
-                return;
+                if (notify.code == -722)
+                {
+                    Win32.NMUPDOWN ud = (Win32.NMUPDOWN)Marshal.PtrToStructure(m.LParam, typeof(Win32.NMUPDOWN));
+                    Value = ud.delta < 0 ? Value.AddMinutes(-15 - ud.delta) : Value.AddMinutes(15 - ud.delta);
+                }
             }
+            base.WndProc(ref m);
+        }
 
-            if (Value.Minute == 44)
+        public new DateTime Value
+        {
+            get { return base.Value; }
+            set
             {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 30, 0);
-                return;
-            }
-
-
-            if (Value.Minute == 46)
-            {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 0, 0);
-                Value = Value.AddHours(1);
-                return;
-            }
-
-
-            if (Value.Minute == 59)
-            {
-                Value = new DateTime(1970, 1, 1, Value.Hour, 45, 0);
-                Value = Value.AddHours(-1);
-                return;
-            }
-
-            if (Value.Minute > 0 && Value.Minute < 15)
-            {
-                Value = Value.AddMinutes(15 - Value.Minute);
-                return;
-            }
-            if (Value.Minute > 15 && Value.Minute < 30)
-            {
-                Value = Value.AddMinutes(30 - Value.Minute);
-                return;
-            }
-            if (Value.Minute > 30 && Value.Minute < 45)
-            {
-                Value = Value.AddMinutes(45 - Value.Minute);
-                return;
-            }
-            if (Value.Minute > 45 && Value.Minute < 60)
-            {
-                Value = Value.AddMinutes(60 - Value.Minute);
-                return;
+                try
+                {
+                    AutoCorrecting = true;
+                    base.Value = value;
+                }
+                finally
+                {
+                    AutoCorrecting = false;
+                }
             }
         }
     }
