@@ -37572,6 +37572,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid or incomplete schedule.
+        /// </summary>
+        public static string VMSS_INVALID_SCHEDULE {
+            get {
+                return ResourceManager.GetString("VMSS_INVALID_SCHEDULE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to VM Snapsh&amp;ot Schedules....
         /// </summary>
         public static string VMSS_MAIN_MENU {

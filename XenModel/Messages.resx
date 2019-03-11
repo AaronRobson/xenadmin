@@ -12755,6 +12755,12 @@ To start a [XenServer] trial, click the button below.</value>
   <data name="VMSS_HOST_NOT_LIVE" xml:space="preserve">
     <value>Pool master unreachable</value>
   </data>
+  <data name="VMSS_INVALID_SCHEDULE" xml:space="preserve">
+    <value>Invalid or incomplete schedule</value>
+  </data>
+  <data name="VMSS_MAIN_MENU" xml:space="preserve">
+    <value>VM Snapsh&amp;ot Schedules...</value>
+  </data>
   <data name="VMSS_MAIN_MENU" xml:space="preserve">
     <value>VM Snapsh&amp;ot Schedules...</value>
   </data>

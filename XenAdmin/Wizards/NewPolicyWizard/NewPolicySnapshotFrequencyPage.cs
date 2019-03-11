@@ -33,6 +33,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 using XenAdmin.Actions;
 using XenAdmin.Controls;
 using XenAdmin.Core;
@@ -48,12 +49,20 @@ namespace XenAdmin.Wizards.NewPolicyWizard
         private VMSS _policyCopy;
         private ServerTimeInfo? _serverTimeInfo;
         private bool updating;
+        private readonly ToolTip InvalidParamToolTip;
 
         public NewPolicySnapshotFrequencyPage()
         {
             InitializeComponent();
             MainTableLayoutPanel.Visible = false;
             LoadingBox.Visible = true;
+
+            InvalidParamToolTip = new ToolTip
+            {
+                IsBalloon = true,
+                ToolTipIcon = ToolTipIcon.Warning,
+                ToolTipTitle = Messages.INVALID_PARAMETER
+            };
 
             try
             {
@@ -299,23 +308,16 @@ namespace XenAdmin.Wizards.NewPolicyWizard
             GetServerTime();
         }
 
-        public bool ValidToSave
-        {
-            get
-            {
-                _policyCopy.frequency = Frequency;
-                _policyCopy.schedule = Schedule;
-                _policyCopy.retained_snapshots = BackupRetention;
-                return EnableNext();
-            }
-        }
+        public bool ValidToSave => EnableNext();
 
         public void ShowLocalValidationMessages()
         {
+            HelpersGUI.ShowBalloonMessage(flowLayoutPanel1, Messages.VMSS_INVALID_SCHEDULE, InvalidParamToolTip);
         }
 
         public void Cleanup()
         {
+            InvalidParamToolTip.Dispose();
         }
 
         public bool HasChanged
