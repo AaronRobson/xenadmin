@@ -32,6 +32,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -58,7 +59,7 @@ namespace XenAdmin.Wizards.NewPolicyWizard
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<DayOfWeek> SelectedDays
+        public DayOfWeek[] SelectedDays
         {
             get
             {
@@ -79,11 +80,11 @@ namespace XenAdmin.Wizards.NewPolicyWizard
                 if (checkBoxSaturday.Checked)
                     days.Add(DayOfWeek.Saturday);
 
-                return days;
+                return days.ToArray();
             }
             set
             {
-                if (value == null || value.Count <= 0)
+                if (value == null || value.Length <= 0)
                     return;
 
                 checkBoxSunday.Checked = value.Contains(DayOfWeek.Sunday);

@@ -78,7 +78,7 @@ namespace XenAPI
             return nextDateTime;
         }
 
-        public static List<DateTime> GetWeeklyDates(DateTime time, int min, int hour, List<DayOfWeek> listDaysOfWeek)
+        public static List<DateTime> GetWeeklyDates(DateTime time, int min, int hour, DayOfWeek[] listDaysOfWeek)
         {
             var nextRun = new DateTime(time.Year, time.Month, time.Day, hour, min, 0);
 
@@ -121,20 +121,20 @@ namespace XenAPI
             return schedule.TryGetValue("hour", out var outStr) && int.TryParse(outStr, out result);
         }
 
-        public static List<DayOfWeek> BackUpScheduleDays(Dictionary<string, string> schedule)
+        public static DayOfWeek[] BackUpScheduleDays(Dictionary<string, string> schedule)
         {
-            var list = new List<DayOfWeek>();
             if (!schedule.ContainsKey("days"))
-                return list;
+                return new DayOfWeek[] { };
 
             var days = schedule["days"].Split(new[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries);
 
+            var list = new List<DayOfWeek>();
             foreach (var d in days)
             {
                 if (Enum.TryParse(d, true, out DayOfWeek result))
                     list.Add(result);
             }
-            return list;
+            return list.ToArray();
         }
     }
 }

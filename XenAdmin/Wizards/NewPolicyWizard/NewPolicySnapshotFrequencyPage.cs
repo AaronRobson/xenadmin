@@ -61,7 +61,7 @@ namespace XenAdmin.Wizards.NewPolicyWizard
                 radioButtonDaily.Checked = true;
                 numericUpDownRetention.Value = 7;
                 SetHourlyMinutes(15);
-                daysWeekCheckboxes.SelectedDays = new List<DayOfWeek> { DayOfWeek.Monday };
+                daysWeekCheckboxes.SelectedDays = new[] {DayOfWeek.Monday};
             }
             finally
             {
