@@ -88,9 +88,9 @@ namespace XenAdmin.Controls
             SelectedSize = selectedSize;
             _minDiskSize = minSize;
 
-            comboBoxUnits.Items.Add(new DiskSizeWithUnits(3, 1, 0.001M, Util.BINARY_KILO, Util.BINARY_TERA, Messages.VAL_TERB, Util.ToTB));
-            comboBoxUnits.Items.Add(new DiskSizeWithUnits(3, 1, 0.001M, Util.BINARY_MEGA, Util.BINARY_GIGA, Messages.VAL_GIGB, Util.ToGB));
-            comboBoxUnits.Items.Add(new DiskSizeWithUnits(0, 256, 1, Util.BINARY_GIGA, Util.BINARY_MEGA, Messages.VAL_MEGB, Util.ToMB));
+            comboBoxUnits.Items.Add(new DiskSizeWithUnits(3, 1, 0.001M, Util.BINARY_KILO, Util.BINARY_TERA, Messages.VAL_TERIB, Util.ToTiB));
+            comboBoxUnits.Items.Add(new DiskSizeWithUnits(3, 1, 0.001M, Util.BINARY_MEGA, Util.BINARY_GIGA, Messages.VAL_GIGIB, Util.ToGiB));
+            comboBoxUnits.Items.Add(new DiskSizeWithUnits(0, 256, 1, Util.BINARY_GIGA, Util.BINARY_MEGA, Messages.VAL_MEGIB, Util.ToMiB));
 
             foreach (DiskSizeWithUnits item in comboBoxUnits.Items)
             {

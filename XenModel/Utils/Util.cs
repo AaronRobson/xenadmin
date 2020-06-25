@@ -69,27 +69,27 @@ namespace XenAdmin
         {
             if (bytes >= 1 * BINARY_GIGA)
             {
-                string format = Messages.VAL_GB_ONE_DECIMAL;
+                string format = Messages.VAL_GIB_ONE_DECIMAL;
                 int dp = 1;
-                double valGB = bytes / BINARY_GIGA;
-                if (valGB > 100)
+                double valGiB = bytes / BINARY_GIGA;
+                if (valGiB > 100)
                 {
                     dp = 0;
-                    format = Messages.VAL_GB;
+                    format = Messages.VAL_GIB;
                 }
                 if(!showPoint0Decimal)
                 {
-                    format = Messages.VAL_GB;
+                    format = Messages.VAL_GIB;
                 }
-                return string.Format(format, Math.Round(valGB, dp, MidpointRounding.AwayFromZero));       
+                return string.Format(format, Math.Round(valGiB, dp, MidpointRounding.AwayFromZero));       
             }
             else if (bytes >= 1 * BINARY_MEGA)
             {
-                return string.Format(Messages.VAL_MB, Math.Round(bytes / BINARY_MEGA));
+                return string.Format(Messages.VAL_MIB, Math.Round(bytes / BINARY_MEGA));
             }
             else if (bytes >= 1 * BINARY_KILO)
             {
-                return string.Format(Messages.VAL_KB, Math.Round(bytes / BINARY_KILO));
+                return string.Format(Messages.VAL_KIB, Math.Round(bytes / BINARY_KILO));
             }
             
             if(bytes == 0)
@@ -104,7 +104,7 @@ namespace XenAdmin
 
         /// <summary>
         /// Returns the string in suitable units and when the number of bytes is 0 the units are the ones given in formatStringWhenZero.
-        /// E.g. : if bytes = 0, showPoint0Decimal = false, formatStringWhenZero = Messages.VAL_MB, then the function will return "0 MB".
+        /// E.g. : if bytes = 0, showPoint0Decimal = false, formatStringWhenZero = Messages.VAL_MIB, then the function will return "0 MB".
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="showPoint0Decimal"></param>
@@ -174,27 +174,27 @@ namespace XenAdmin
         {
             if (bytes >= BINARY_TERA)
             {
-                unit = isRate ? Messages.VAL_TERRATE : Messages.VAL_TERB;
+                unit = isRate ? Messages.VAL_TERRATE : Messages.VAL_TERIB;
                 var result = Math.Round(bytes / BINARY_TERA, decPlaces);
                 return string.IsNullOrEmpty(format) ? result.ToString() : result.ToString(format);
             }
             if (bytes >= BINARY_GIGA)
             {
-                unit = isRate ? Messages.VAL_GIGRATE : Messages.VAL_GIGB;
+                unit = isRate ? Messages.VAL_GIGRATE : Messages.VAL_GIGIB;
                 var result = Math.Round(bytes / BINARY_GIGA, decPlaces);
                 return string.IsNullOrEmpty(format) ? result.ToString() : result.ToString(format);
             }
 
             if (bytes >= BINARY_MEGA)
             {
-                unit = isRate ? Messages.VAL_MEGRATE : Messages.VAL_MEGB;
+                unit = isRate ? Messages.VAL_MEGRATE : Messages.VAL_MEGIB;
                 var result = Math.Round(bytes / BINARY_MEGA, decPlaces);
                 return string.IsNullOrEmpty(format) ? result.ToString() : result.ToString(format);
             }
 
             if (bytes >= BINARY_KILO)
             {
-                unit = isRate ? Messages.VAL_KILRATE : Messages.VAL_KILB;
+                unit = isRate ? Messages.VAL_KILRATE : Messages.VAL_KILIB;
                 var result = Math.Round(bytes / BINARY_KILO, decPlaces);
                 return string.IsNullOrEmpty(format) ? result.ToString() : result.ToString(format);
             }
@@ -285,19 +285,19 @@ namespace XenAdmin
             }
         }
 
-        public static double ToTB(double bytes, RoundingBehaviour rounding, int decimalPlaces)
+        public static double ToTiB(double bytes, RoundingBehaviour rounding, int decimalPlaces)
         {
             double value = bytes / BINARY_TERA;
             return DecimalAdjustment(value, rounding, decimalPlaces);
         }
 
-        public static double ToGB(double bytes, RoundingBehaviour rounding, int decimalPlaces)
+        public static double ToGiB(double bytes, RoundingBehaviour rounding, int decimalPlaces)
         {
             double value = bytes / BINARY_GIGA;
             return DecimalAdjustment(value, rounding, decimalPlaces);
         }
 
-        public static double ToMB(double bytes, RoundingBehaviour rounding, int decimalPlaces = 0)
+        public static double ToMiB(double bytes, RoundingBehaviour rounding, int decimalPlaces = 0)
         {
             double value = bytes / BINARY_MEGA;
             return DecimalAdjustment(value, rounding, decimalPlaces);
@@ -308,7 +308,7 @@ namespace XenAdmin
             // Special case to cope with choosing an amount that's a multiple of 0.1G but not 0.5G --
             // sending it to the server as the nearest byte and getting it back later --
             // and finding it's fractionally changed, messing up our spinner permitted ranges.
-            double amountRounded = ToGB(amount, RoundingBehaviour.Nearest, 1) * BINARY_GIGA;
+            double amountRounded = ToGiB(amount, RoundingBehaviour.Nearest, 1) * BINARY_GIGA;
             double roundingDiff = amountRounded - amount;
             if (roundingDiff > -1.0 && roundingDiff < 1.0)  // within 1 byte: although I think it will always be positive in the case we want to correct
                 return amountRounded;

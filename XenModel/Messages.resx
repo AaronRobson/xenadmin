@@ -13135,38 +13135,17 @@ To start a [XenServer] trial, click the button below.</value>
   <data name="VAL_FORMAT_SECONDS" xml:space="preserve">
     <value>{0}{1}</value>
   </data>
-  <data name="VAL_GB" xml:space="preserve">
-    <value>{0} GB</value>
-  </data>
-  <data name="VAL_GB_ONE_DECIMAL" xml:space="preserve">
-    <value>{0:F1} GB</value>
-  </data>
-  <data name="VAL_GIGB" xml:space="preserve">
-    <value>GB</value>
-  </data>
   <data name="VAL_GIGHZ" xml:space="preserve">
     <value>GHz</value>
   </data>
   <data name="VAL_GIGRATE" xml:space="preserve">
     <value>GBps</value>
   </data>
-  <data name="VAL_KB" xml:space="preserve">
-    <value>{0} kB</value>
-  </data>
-  <data name="VAL_KILB" xml:space="preserve">
-    <value>kB</value>
-  </data>
   <data name="VAL_KILOWATT" xml:space="preserve">
     <value>kW</value>
   </data>
   <data name="VAL_KILRATE" xml:space="preserve">
     <value>kBps</value>
-  </data>
-  <data name="VAL_MB" xml:space="preserve">
-    <value>{0} MB</value>
-  </data>
-  <data name="VAL_MEGB" xml:space="preserve">
-    <value>MB</value>
   </data>
   <data name="VAL_MEGHZ" xml:space="preserve">
     <value>MHz</value>
@@ -13197,9 +13176,6 @@ To start a [XenServer] trial, click the button below.</value>
   </data>
   <data name="VAL_SEC" xml:space="preserve">
     <value>s</value>
-  </data>
-  <data name="VAL_TERB" xml:space="preserve">
-    <value>TB</value>
   </data>
   <data name="VAL_TERRATE" xml:space="preserve">
     <value>TBps</value>
@@ -14577,5 +14553,29 @@ Any disk in your VM's DVD drive will be ejected when installing [Citrix VM Tools
   </data>
   <data name="YOU_ARE_HERE" xml:space="preserve">
     <value>You are here</value>
+  </data>
+  <data name="VAL_GIB" xml:space="preserve">
+    <value>{0} GiB</value>
+  </data>
+  <data name="VAL_GIB_ONE_DECIMAL" xml:space="preserve">
+    <value>{0:F1} GiB</value>
+  </data>
+  <data name="VAL_GIGIB" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="VAL_KIB" xml:space="preserve">
+    <value>{0} KiB</value>
+  </data>
+  <data name="VAL_KILIB" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="VAL_MEGIB" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="VAL_MIB" xml:space="preserve">
+    <value>{0} MiB</value>
+  </data>
+  <data name="VAL_TERIB" xml:space="preserve">
+    <value>TiB</value>
   </data>
 </root>

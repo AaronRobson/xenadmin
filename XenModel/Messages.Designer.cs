@@ -38001,29 +38001,20 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} GB.
+        ///   Looks up a localized string similar to {0} GiB.
         /// </summary>
-        public static string VAL_GB {
+        public static string VAL_GIB {
             get {
-                return ResourceManager.GetString("VAL_GB", resourceCulture);
+                return ResourceManager.GetString("VAL_GIB", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0:F1} GB.
+        ///   Looks up a localized string similar to {0:F1} GiB.
         /// </summary>
-        public static string VAL_GB_ONE_DECIMAL {
+        public static string VAL_GIB_ONE_DECIMAL {
             get {
-                return ResourceManager.GetString("VAL_GB_ONE_DECIMAL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GB.
-        /// </summary>
-        public static string VAL_GIGB {
-            get {
-                return ResourceManager.GetString("VAL_GIGB", resourceCulture);
+                return ResourceManager.GetString("VAL_GIB_ONE_DECIMAL", resourceCulture);
             }
         }
         
@@ -38037,6 +38028,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GiB.
+        /// </summary>
+        public static string VAL_GIGIB {
+            get {
+                return ResourceManager.GetString("VAL_GIGIB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GBps.
         /// </summary>
         public static string VAL_GIGRATE {
@@ -38046,20 +38046,20 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} kB.
+        ///   Looks up a localized string similar to {0} KiB.
         /// </summary>
-        public static string VAL_KB {
+        public static string VAL_KIB {
             get {
-                return ResourceManager.GetString("VAL_KB", resourceCulture);
+                return ResourceManager.GetString("VAL_KIB", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kB.
+        ///   Looks up a localized string similar to KiB.
         /// </summary>
-        public static string VAL_KILB {
+        public static string VAL_KILIB {
             get {
-                return ResourceManager.GetString("VAL_KILB", resourceCulture);
+                return ResourceManager.GetString("VAL_KILIB", resourceCulture);
             }
         }
         
@@ -38082,24 +38082,6 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} MB.
-        /// </summary>
-        public static string VAL_MB {
-            get {
-                return ResourceManager.GetString("VAL_MB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MB.
-        /// </summary>
-        public static string VAL_MEGB {
-            get {
-                return ResourceManager.GetString("VAL_MEGB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to MHz.
         /// </summary>
         public static string VAL_MEGHZ {
@@ -38109,11 +38091,29 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MiB.
+        /// </summary>
+        public static string VAL_MEGIB {
+            get {
+                return ResourceManager.GetString("VAL_MEGIB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MBps.
         /// </summary>
         public static string VAL_MEGRATE {
             get {
                 return ResourceManager.GetString("VAL_MEGRATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} MiB.
+        /// </summary>
+        public static string VAL_MIB {
+            get {
+                return ResourceManager.GetString("VAL_MIB", resourceCulture);
             }
         }
         
@@ -38190,11 +38190,11 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TB.
+        ///   Looks up a localized string similar to TiB.
         /// </summary>
-        public static string VAL_TERB {
+        public static string VAL_TERIB {
             get {
-                return ResourceManager.GetString("VAL_TERB", resourceCulture);
+                return ResourceManager.GetString("VAL_TERIB", resourceCulture);
             }
         }
         

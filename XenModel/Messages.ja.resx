@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
-    <xsd:element msdata:IsDataSet="true" name="root">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element minOccurs="0" name="value" type="xsd:string"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element minOccurs="0" msdata:Ordinal="1" name="value" type="xsd:string"/>
-                <xsd:element minOccurs="0" msdata:Ordinal="2" name="comment" type="xsd:string"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute msdata:Ordinal="1" name="name" type="xsd:string" use="required"/>
-              <xsd:attribute msdata:Ordinal="3" name="type" type="xsd:string"/>
-              <xsd:attribute msdata:Ordinal="4" name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element minOccurs="0" msdata:Ordinal="1" name="value" type="xsd:string"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -11889,7 +11889,7 @@ VM が再起動したら、[[Citrix VM Tools] をインストール] を再度�
     <value>権限のより多いユーザー アカウントで再試行してください。</value>
   </data>
   <data name="SOLUTION_UNKNOWN" xml:space="preserve">
-    <value/>
+    <value />
   </data>
   <data name="SOME_ERRORS_ENCOUNTERED" xml:space="preserve">
     <value>いくつかのエラーが発生しました。詳しくは、[XenCenter] のログを参照してください。</value>
@@ -12514,7 +12514,7 @@ SR-IOV ネットワークを有効にするには、サーバーの再起動が�
     <value>OVF または OVA パッケージからアプライアンスをインポートします。</value>
   </data>
   <data name="TYPE_PAGE_DESCRIPTION_HEADER_VHD" xml:space="preserve">
-    <value/>
+    <value />
   </data>
   <data name="TYPE_PAGE_DESCRIPTION_HEADER_XVA" xml:space="preserve">
     <value>ローカルに格納された VM、テンプレート、またはスナップショットを新規 VM としてインポートします。</value>
@@ -13136,11 +13136,11 @@ SR-IOV ネットワークを有効にするには、サーバーの再起動が�
   <data name="VAL_FORMAT_SECONDS" xml:space="preserve">
     <value>{0}{1}</value>
   </data>
-  <data name="VAL_GB" xml:space="preserve">
-    <value>{0} GB</value>
+  <data name="VAL_GIB" xml:space="preserve">
+    <value>{0} GiB</value>
   </data>
-  <data name="VAL_GB_ONE_DECIMAL" xml:space="preserve">
-    <value>{0:F1} GB</value>
+  <data name="VAL_GIB_ONE_DECIMAL" xml:space="preserve">
+    <value>{0:F1} GiB</value>
   </data>
   <data name="VAL_GIGB" xml:space="preserve">
     <value>GB</value>
@@ -13151,11 +13151,11 @@ SR-IOV ネットワークを有効にするには、サーバーの再起動が�
   <data name="VAL_GIGRATE" xml:space="preserve">
     <value>GBps</value>
   </data>
-  <data name="VAL_KB" xml:space="preserve">
-    <value>{0} kB</value>
+  <data name="VAL_KIB" xml:space="preserve">
+    <value>{0} KiB</value>
   </data>
-  <data name="VAL_KILB" xml:space="preserve">
-    <value>kB</value>
+  <data name="VAL_KILIB" xml:space="preserve">
+    <value>KiB</value>
   </data>
   <data name="VAL_KILOWATT" xml:space="preserve">
     <value>kW</value>
@@ -13163,11 +13163,11 @@ SR-IOV ネットワークを有効にするには、サーバーの再起動が�
   <data name="VAL_KILRATE" xml:space="preserve">
     <value>Kbps</value>
   </data>
-  <data name="VAL_MB" xml:space="preserve">
-    <value>{0} MB</value>
+  <data name="VAL_MIB" xml:space="preserve">
+    <value>{0} MiB</value>
   </data>
-  <data name="VAL_MEGB" xml:space="preserve">
-    <value>MB</value>
+  <data name="VAL_MEGIB" xml:space="preserve">
+    <value>MiB</value>
   </data>
   <data name="VAL_MEGHZ" xml:space="preserve">
     <value>MHz</value>
@@ -13199,8 +13199,8 @@ SR-IOV ネットワークを有効にするには、サーバーの再起動が�
   <data name="VAL_SEC" xml:space="preserve">
     <value>s</value>
   </data>
-  <data name="VAL_TERB" xml:space="preserve">
-    <value>TB</value>
+  <data name="VAL_TERIB" xml:space="preserve">
+    <value>TiB</value>
   </data>
   <data name="VAL_TERRATE" xml:space="preserve">
     <value>Tbps</value>
@@ -13870,7 +13870,7 @@ SR-IOV ネットワークを有効にするには、サーバーの再起動が�
     <value>詳細</value>
   </data>
   <data name="WLB_ADVANCED_CONFIGURATION_SUBTEXT" xml:space="preserve">
-    <value/>
+    <value />
   </data>
   <data name="WLB_AUDIT_LOG_MAXIMUM" xml:space="preserve">
     <value>最大</value>

@@ -45,10 +45,10 @@ namespace XenAdmin.Controls
 
         public event EventHandler Changed;
 
-        private const decimal MIN_CACHE_SIZE_GB = 1;
-        private const decimal MAX_CACHE_SIZE_GB = 2 * Util.BINARY_KILO; // 2TB
-        private const decimal DEFAULT_CACHE_SIZE_GB = 10;
-        private decimal origCacheSizeGb;
+        private const decimal MIN_CACHE_SIZE_GIB = 1;
+        private const decimal MAX_CACHE_SIZE_GIB = 2 * Util.BINARY_KILO; // 2TiB
+        private const decimal DEFAULT_CACHE_SIZE_GIB = 10;
+        private decimal origCacheSizeGiB;
 
         public PvsCacheStorageRow(Host host, PVS_site site)
         {
@@ -64,10 +64,10 @@ namespace XenAdmin.Controls
             labelHostName.Text = Host.Name();
 
             // initialize cacheSize
-            SetupCacheSizeSpinner(OrigPvsCacheStorage == null ? DEFAULT_CACHE_SIZE_GB : (decimal)Util.ToGB(OrigPvsCacheStorage.size, RoundingBehaviour.Nearest, 1), 
-                MIN_CACHE_SIZE_GB, 
-                MAX_CACHE_SIZE_GB);
-            origCacheSizeGb = numericUpDownCacheSize.Value;
+            SetupCacheSizeSpinner(OrigPvsCacheStorage == null ? DEFAULT_CACHE_SIZE_GIB : (decimal)Util.ToGiB(OrigPvsCacheStorage.size, RoundingBehaviour.Nearest, 1), 
+                MIN_CACHE_SIZE_GIB, 
+                MAX_CACHE_SIZE_GIB);
+            origCacheSizeGiB = numericUpDownCacheSize.Value;
 
             comboBoxCacheSr.Items.Clear();
 
@@ -100,7 +100,7 @@ namespace XenAdmin.Controls
                     memorySr = memorySrs.First();
             }
 
-            var enabled = Host.dom0_memory_extra() >= MIN_CACHE_SIZE_GB * Util.BINARY_GIGA;
+            var enabled = Host.dom0_memory_extra() >= MIN_CACHE_SIZE_GIB * Util.BINARY_GIGA;
             var label = enabled ? Messages.PVS_CACHE_MEMORY_ONLY : Messages.PVS_CACHE_MEMORY_ONLY_DISABLED;
             var memorySrItem = new SrComboBoxItem(memorySr, label, enabled);
             comboBoxCacheSr.Items.Add(memorySrItem);
@@ -128,7 +128,7 @@ namespace XenAdmin.Controls
 
         private bool SrIsSuitableForPvsCache(SR sr)
         {
-            return sr.Show(Properties.Settings.Default.ShowHiddenVMs) && sr.SupportsVdiCreate() && sr.FreeSpace() >= MIN_CACHE_SIZE_GB * Util.BINARY_GIGA;
+            return sr.Show(Properties.Settings.Default.ShowHiddenVMs) && sr.SupportsVdiCreate() && sr.FreeSpace() >= MIN_CACHE_SIZE_GIB * Util.BINARY_GIGA;
         }
 
         private void SetupCacheSizeSpinner(decimal value, decimal min, decimal max)
@@ -185,7 +185,7 @@ namespace XenAdmin.Controls
                     return CacheSr != null;
                 if (CacheSr == null)
                     return OrigPvsCacheStorage != null;
-                return OrigPvsCacheStorage.SR.opaque_ref != CacheSr.opaque_ref || origCacheSizeGb != numericUpDownCacheSize.Value;
+                return OrigPvsCacheStorage.SR.opaque_ref != CacheSr.opaque_ref || origCacheSizeGiB != numericUpDownCacheSize.Value;
             }
         }
 
@@ -202,8 +202,8 @@ namespace XenAdmin.Controls
             var selectedSr = CacheSr;
             if (selectedSr != null)
             {
-                var maxSize = (decimal)Util.ToGB(selectedSr.GetSRType(false) == SR.SRTypes.tmpfs ? Host.dom0_memory_extra() : selectedSr.FreeSpace(), RoundingBehaviour.Down, 1); 
-                maxSize = Math.Min(maxSize, MAX_CACHE_SIZE_GB);
+                var maxSize = (decimal)Util.ToGiB(selectedSr.GetSRType(false) == SR.SRTypes.tmpfs ? Host.dom0_memory_extra() : selectedSr.FreeSpace(), RoundingBehaviour.Down, 1); 
+                maxSize = Math.Min(maxSize, MAX_CACHE_SIZE_GIB);
 
                 if (maxSize != numericUpDownCacheSize.Maximum)
                     SetupCacheSizeSpinner(numericUpDownCacheSize.Value, numericUpDownCacheSize.Minimum, maxSize);

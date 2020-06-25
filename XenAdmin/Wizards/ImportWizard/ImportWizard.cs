@@ -540,7 +540,7 @@ namespace XenAdmin.Wizards.ImportWizard
 			temp.Add(new Tuple(Messages.FINISH_PAGE_IMAGEPATH, m_pageImportSource.FilePath));
 			temp.Add(new Tuple(Messages.FINISH_PAGE_VMNAME, m_pageVMconfig.VmName));
 			temp.Add(new Tuple(Messages.FINISH_PAGE_CPUCOUNT, m_pageVMconfig.CpuCount.ToString()));
-			temp.Add(new Tuple(Messages.FINISH_PAGE_MEMORY, string.Format(Messages.VAL_MB, m_pageVMconfig.Memory)));
+			temp.Add(new Tuple(Messages.FINISH_PAGE_MEMORY, string.Format(Messages.VAL_MIB, m_pageVMconfig.Memory)));
 			if (Helpers.NaplesOrGreater(TargetConnection))
 			    temp.Add(new Tuple(Messages.BOOT_MODE, m_pageBootOptions.SelectedBootMode.StringOf()));
 

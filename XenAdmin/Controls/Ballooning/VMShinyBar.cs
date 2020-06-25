@@ -81,27 +81,27 @@ namespace XenAdmin.Controls.Ballooning
 
         public void SetRanges(double dynamic_min_lowlimit, double dynamic_min_highlimit, double dynamic_max_lowlimit, double dynamic_max_highlimit, string units)
         {
-            if(units == "MB")
+            if (units == "MiB")
             {
-                // Round to nearest MB inwards to agree with MemorySpinner and avoid bugs like CA-34996.
-                double lowMB, highMB;
-                MemorySpinner.CalcMBRanges(dynamic_min_lowlimit, dynamic_min_highlimit, out lowMB, out highMB);
-                this.dynamic_min_lowlimit = lowMB * Util.BINARY_MEGA;
-                this.dynamic_min_highlimit = highMB * Util.BINARY_MEGA;
-                MemorySpinner.CalcMBRanges(dynamic_max_lowlimit, dynamic_max_highlimit, out lowMB, out highMB);
-                this.dynamic_max_lowlimit = lowMB * Util.BINARY_MEGA;
-                this.dynamic_max_highlimit = highMB * Util.BINARY_MEGA;
+                // Round to nearest MiB inwards to agree with MemorySpinner and avoid bugs like CA-34996.
+                double lowMiB, highMiB;
+                MemorySpinner.CalcMiBRanges(dynamic_min_lowlimit, dynamic_min_highlimit, out lowMiB, out highMiB);
+                this.dynamic_min_lowlimit = lowMiB * Util.BINARY_MEGA;
+                this.dynamic_min_highlimit = highMiB * Util.BINARY_MEGA;
+                MemorySpinner.CalcMiBRanges(dynamic_max_lowlimit, dynamic_max_highlimit, out lowMiB, out highMiB);
+                this.dynamic_max_lowlimit = lowMiB * Util.BINARY_MEGA;
+                this.dynamic_max_highlimit = highMiB * Util.BINARY_MEGA;
             }
             else
             {
-                // Round to nearest GB inwards to agree with MemorySpinner and avoid bugs like CA-34996.
-                double lowGB, highGB;
-                MemorySpinner.CalcGBRanges(dynamic_min_lowlimit, dynamic_min_highlimit, out lowGB, out highGB);
-                this.dynamic_min_lowlimit = lowGB * Util.BINARY_GIGA;
-                this.dynamic_min_highlimit = highGB * Util.BINARY_GIGA;
-                MemorySpinner.CalcGBRanges(dynamic_max_lowlimit, dynamic_max_highlimit, out lowGB, out highGB);                
-                this.dynamic_max_lowlimit = lowGB * Util.BINARY_GIGA;
-                this.dynamic_max_highlimit = highGB * Util.BINARY_GIGA;
+                // Round to nearest GiB inwards to agree with MemorySpinner and avoid bugs like CA-34996.
+                double lowGiB, highGiB;
+                MemorySpinner.CalcGiBRanges(dynamic_min_lowlimit, dynamic_min_highlimit, out lowGiB, out highGiB);
+                this.dynamic_min_lowlimit = lowGiB * Util.BINARY_GIGA;
+                this.dynamic_min_highlimit = highGiB * Util.BINARY_GIGA;
+                MemorySpinner.CalcGiBRanges(dynamic_max_lowlimit, dynamic_max_highlimit, out lowGiB, out highGiB);                
+                this.dynamic_max_lowlimit = lowGiB * Util.BINARY_GIGA;
+                this.dynamic_max_highlimit = highGiB * Util.BINARY_GIGA;
             }          
         }
 

@@ -38,21 +38,21 @@ namespace XenAdmin.Controls.Ballooning
     public partial class MemorySpinner : UserControl
     {
         public event EventHandler SpinnerValueChanged;
-        private double valueMB;
+        private double valueMiB;
         private string previousUnitsValue;
         private bool initializing = true;
 
         public MemorySpinner()
         {
             InitializeComponent();
-            previousUnitsValue = Messages.VAL_GIGB;
+            previousUnitsValue = Messages.VAL_GIGIB;
         }
 
         public void Initialize(double amount, double static_max)
         {
             amount = Util.CorrectRoundingErrors(amount);
 
-            Units = static_max <= Util.BINARY_GIGA ? Messages.VAL_MEGB : Messages.VAL_GIGB;
+            Units = static_max <= Util.BINARY_GIGA ? Messages.VAL_MEGIB : Messages.VAL_GIGIB;
             ChangeSpinnerSettings();
             previousUnitsValue = Units;
             Initialize(amount, RoundingBehaviour.None);
@@ -60,7 +60,7 @@ namespace XenAdmin.Controls.Ballooning
 
         public void Initialize(double amount, RoundingBehaviour rounding)
         {
-            ValueMB = Util.ToMB(amount, rounding);
+            ValueMiB = Util.ToMiB(amount, rounding);
             setSpinnerValueDisplay(amount);
             initializing = false;
         }
@@ -84,33 +84,33 @@ namespace XenAdmin.Controls.Ballooning
         {
             get
             {
-                return ValueMB * Util.BINARY_MEGA;
+                return ValueMiB * Util.BINARY_MEGA;
             }
         }
 
-        double ValueMB
+        double ValueMiB
         {
             get
             {
-                return valueMB;
+                return valueMiB;
             }
 
             set
             {
-                valueMB = value;
+                valueMiB = value;
             }
         }
 
         private void setSpinnerValueDisplay(double value)
         {
             decimal newValue;
-            if (Units == "GB")
+            if (Units == "GiB")
             {
-                newValue = (decimal)Util.ToGB(value, RoundingBehaviour.Nearest, 1);
+                newValue = (decimal)Util.ToGiB(value, RoundingBehaviour.Nearest, 1);
             }
             else
             {
-                newValue = (long)Util.ToMB(value, RoundingBehaviour.Nearest);
+                newValue = (long)Util.ToMiB(value, RoundingBehaviour.Nearest);
             }
             if (newValue < Spinner.Minimum)
                 newValue = Spinner.Minimum;
@@ -119,27 +119,27 @@ namespace XenAdmin.Controls.Ballooning
             Spinner.Value = newValue;
         }
 
-        public static void CalcMBRanges(double minBytes, double maxBytes, out double minMB, out double maxMB)
+        public static void CalcMiBRanges(double minBytes, double maxBytes, out double minMiB, out double maxMiB)
         {
             // Round ranges inwards to avoid bugs like CA-34487 and CA-34996
-            minMB = Util.ToMB(minBytes, RoundingBehaviour.Up);
-            maxMB = Util.ToMB(maxBytes, RoundingBehaviour.Down);
-            if (minMB > maxMB)  // just in case...
+            minMiB = Util.ToMiB(minBytes, RoundingBehaviour.Up);
+            maxMiB = Util.ToMiB(maxBytes, RoundingBehaviour.Down);
+            if (minMiB > maxMiB)  // just in case...
             {
-                minMB = Util.ToMB(minBytes, RoundingBehaviour.None);
-                maxMB = Util.ToMB(maxBytes, RoundingBehaviour.None);
+                minMiB = Util.ToMiB(minBytes, RoundingBehaviour.None);
+                maxMiB = Util.ToMiB(maxBytes, RoundingBehaviour.None);
             }
         }
 
-        public static void CalcGBRanges(double minBytes, double maxBytes, out double minGB, out double maxGB)
+        public static void CalcGiBRanges(double minBytes, double maxBytes, out double minGiB, out double maxGiB)
         {
             // Round ranges inwards to avoid bugs like CA-34487 and CA-34996
-            minGB = Util.ToGB(minBytes, RoundingBehaviour.Up, 1);
-            maxGB = Util.ToGB(maxBytes, RoundingBehaviour.Down, 1);
-            if (minGB > maxGB)  // just in case...
+            minGiB = Util.ToGiB(minBytes, RoundingBehaviour.Up, 1);
+            maxGiB = Util.ToGiB(maxBytes, RoundingBehaviour.Down, 1);
+            if (minGiB > maxGiB)  // just in case...
             {
-                minGB = Util.ToGB(minBytes, RoundingBehaviour.None, 1);
-                maxGB = Util.ToGB(maxBytes, RoundingBehaviour.None, 1);
+                minGiB = Util.ToGiB(minBytes, RoundingBehaviour.None, 1);
+                maxGiB = Util.ToGiB(maxBytes, RoundingBehaviour.None, 1);
             }
         }
 
@@ -149,13 +149,13 @@ namespace XenAdmin.Controls.Ballooning
                 return;  // Can happen when we are adjusting several simultaneously: can cause a stack overflow
 
             double spinnerMin, spinnerMax;
-            if (Units == "MB")
-            {                
-                CalcMBRanges(min, max, out spinnerMin, out spinnerMax);
+            if (Units == "MiB")
+            {
+                CalcMiBRanges(min, max, out spinnerMin, out spinnerMax);
             }
             else
             {
-                CalcGBRanges(min, max, out spinnerMin, out spinnerMax);               
+                CalcGiBRanges(min, max, out spinnerMin, out spinnerMax);               
             }
             Spinner.Minimum = (decimal)spinnerMin;
             Spinner.Maximum = (decimal)spinnerMax;
@@ -170,7 +170,7 @@ namespace XenAdmin.Controls.Ballooning
             }
             set
             {
-                if (Units == "MB")
+                if (Units == "MiB")
                 {
                     Spinner.Increment = (decimal)value / Util.BINARY_MEGA;                    
                 }
@@ -178,7 +178,7 @@ namespace XenAdmin.Controls.Ballooning
                 {
                     // When the units are GB, we simply want the numbers to increase by 1 if the spinner value is greater than 10 GB
                     // and by 0.1 if smaller than 10 GB, this being the reason we ignore the given value.
-                    if (valueMB * Util.BINARY_MEGA < 10 * Util.BINARY_GIGA)
+                    if (valueMiB * Util.BINARY_MEGA < 10 * Util.BINARY_GIGA)
                     {
                         Spinner.Increment = 0.1M;
                     }
@@ -193,18 +193,18 @@ namespace XenAdmin.Controls.Ballooning
         private void Spinner_ValueChanged(object sender, EventArgs e)
         {
             // We do not want to modify the ValueMB if the user does not modify anything in the Spinner.Value. 
-            // When the Memory Settings dialog is intiliazing and the units change because the new value is > 1 GB,
+            // When the Memory Settings dialog is initializing and the units change because the new value is > 1 GiB,
             // we do not want any changes to be applied to ValueMB.
             if (initializing)
               return;
 
-            if (Units == "GB")
+            if (Units == "GiB")
             {
-                ValueMB = (double)Spinner.Value * Util.BINARY_KILO;
+                ValueMiB = (double)Spinner.Value * Util.BINARY_KILO;
             }
             else
             {
-                ValueMB = (double)Spinner.Value;
+                ValueMiB = (double)Spinner.Value;
             }
 
             if (SpinnerValueChanged != null)
@@ -223,7 +223,7 @@ namespace XenAdmin.Controls.Ballooning
             if (Units == previousUnitsValue)
                 return;
 
-            if (Units == "GB")
+            if (Units == "GiB")
             {
                 SetRange((double)Spinner.Minimum * Util.BINARY_MEGA, (double)Spinner.Maximum * Util.BINARY_MEGA);
                 Spinner.DecimalPlaces = 1;

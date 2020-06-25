@@ -220,7 +220,7 @@ namespace XenAdmin.Controls.Ballooning
             int text_bottom = line_top - 2;
 
             // Find the size of the longest label
-            string label = string.Format(Messages.VAL_MB, Util.ToMB(max, RoundingBehaviour.Nearest));
+            string label = string.Format(Messages.VAL_MIB, Util.ToMiB(max, RoundingBehaviour.Nearest));
             Size labelSize = Drawing.MeasureText(g, label, Program.DefaultFont, TextFormatFlags.NoPadding);
             int longest = labelSize.Width;
             int text_top = text_bottom - labelSize.Height;

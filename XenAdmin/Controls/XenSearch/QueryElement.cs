@@ -71,7 +71,7 @@ namespace XenAdmin.Controls.XenSearch
             queryTypes.Add(new XenModelObjectPropertyQueryType<Pool>(2, ObjectTypes.None, PropertyNames.pool));
             queryTypes.Add(new HostQueryType(2, ObjectTypes.None));
 
-            queryTypes.Add(new LongQueryType(3, ObjectTypes.VM, Messages.MEMORY, PropertyNames.memory, Util.BINARY_MEGA, Messages.VAL_MEGB));
+            queryTypes.Add(new LongQueryType(3, ObjectTypes.VM, Messages.MEMORY, PropertyNames.memory, Util.BINARY_MEGA, Messages.VAL_MEGIB));
             queryTypes.Add(new IPAddressQueryType(3, ObjectTypes.VM | ObjectTypes.Server | ObjectTypes.LocalSR | ObjectTypes.RemoteSR, PropertyNames.ip_address));
             queryTypes.Add(new DatePropertyQueryType(3, ObjectTypes.VM, PropertyNames.start_time));
             queryTypes.Add(new EnumPropertyQueryType<vm_power_state>(3, ObjectTypes.VM, PropertyNames.power_state));
@@ -82,7 +82,7 @@ namespace XenAdmin.Controls.XenSearch
             queryTypes.Add(new BooleanQueryType(3, ObjectTypes.VM, PropertyNames.vendor_device_state));
             queryTypes.Add(new EnumPropertyQueryType<SR.SRTypes>(3, /*ObjectTypes.LocalSR | ObjectTypes.RemoteSR*/ ObjectTypes.None, PropertyNames.sr_type));
 
-            queryTypes.Add(new LongQueryType(4, ObjectTypes.VDI, Messages.SIZE, PropertyNames.size, Util.BINARY_GIGA, Messages.VAL_GIGB));
+            queryTypes.Add(new LongQueryType(4, ObjectTypes.VDI, Messages.SIZE, PropertyNames.size, Util.BINARY_GIGA, Messages.VAL_GIGIB));
             queryTypes.Add(new BooleanQueryType(4, ObjectTypes.LocalSR | ObjectTypes.RemoteSR | ObjectTypes.VDI, PropertyNames.shared));
             queryTypes.Add(new BooleanQueryType(4, ObjectTypes.Pool, PropertyNames.ha_enabled));
             queryTypes.Add(new BooleanQueryType(4, ObjectTypes.Pool, PropertyNames.isNotFullyUpgraded));
@@ -2517,11 +2517,11 @@ namespace XenAdmin.Controls.XenSearch
                     Messages.ATTACHED_TO, VmFilter),
                 new XMOListContains<VM>(PropertyNames.vm, false, 
                     Messages.NOT_ATTACHED_TO, VmFilter),
-                new IntMatch(PropertyNames.size, Messages.SIZE_IS, Messages.VAL_GIGB, 
+                new IntMatch(PropertyNames.size, Messages.SIZE_IS, Messages.VAL_GIGIB, 
                     Util.BINARY_GIGA, IntPropertyQuery.PropertyQueryType.exactmatch),
-                new IntMatch(PropertyNames.size, Messages.BIGGER_THAN, Messages.VAL_GIGB, 
+                new IntMatch(PropertyNames.size, Messages.BIGGER_THAN, Messages.VAL_GIGIB, 
                     Util.BINARY_GIGA, IntPropertyQuery.PropertyQueryType.gt),
-                new IntMatch(PropertyNames.size, Messages.SMALLER_THAN, Messages.VAL_GIGB, 
+                new IntMatch(PropertyNames.size, Messages.SMALLER_THAN, Messages.VAL_GIGIB, 
                     Util.BINARY_GIGA, IntPropertyQuery.PropertyQueryType.lt),
             };
 
